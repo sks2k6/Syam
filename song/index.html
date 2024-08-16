@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUSIC PLAYER | 2023</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,10 +13,9 @@
     <div class="music-player-body">
         <h2> MUSIC PLAYER </h2>
         <img class="track-image" id="trackImage" src="#" alt="Track Image">
-
         <h3 id="trackName"></h3>
         <audio id="audioPlayer" controls>
-            <source src="music/Creed - One Last Breath (Official Video).mp3" type="audio/mpeg">
+            <source src="#" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
         <div class="controls">
@@ -32,25 +30,27 @@
         const playPauseButton = document.getElementById('playPauseButton');
         const nextButton = document.getElementById('nextButton');
         const prevButton = document.getElementById('prevButton');
-        const trackNameElement = document.getElementById('trackName');// Track name display
+        const trackNameElement = document.getElementById('trackName'); // Track name display
         const trackImageElement = document.getElementById('trackImage'); // Track image
-        // Added track name element
-        // Define the audio files with names
+        
+        // Define the audio files with URLs and names
         const audioFiles = [
-            { name: 'Creed - One Last Breath', src: 'music/Creed - One Last Breath (Official Video).mp3', image: 'trackimages/creed.jpg' },
-            { name: 'Aadat Unplugged', src: 'music/Aadat Unplugged.mp3', image: 'trackimages/aadat.jpg' },
-            { name: 'ACDC - Thunderstruck', src: 'music/ACDC - Thunderstruck (Live At River Plate, December 2009).mp3', image: 'trackimages/acdc-thunderstruck.jpg' },
-            { name: 'Guns N Roses-Sweet Child O-Mine ', src: 'music/Guns N Roses - Sweet Child O Mine.mp3', image: 'trackimages/sweet-child-o-mine.jpg' },
-            // Add more audio file objects as needed
+            { name: 'Mysterious Game-Lxngvx', src: 'https://s31.aconvert.com/convert/p3r68-cdx67/na62t-7dwif.mp3', image: 'https://ik.imagekit.io/eypz/1723780773254_u4CuUBXi8.png' },
+            { name: 'Aadat Unplugged', src: 'https://s51.aconvert.com/convert/p3r68-cdx67/qkt2b-jzdj1.mp3', image: 'https://ik.imagekit.io/eypz/1723779869126_ajP7c9G85.png' },
+            { name: 'ACDC - Thunderstruck', src: 'https://example.com/music/acdc_thunderstruck.mp3', image: 'https://example.com/images/acdc_thunderstruck.jpg' },
+            { name: 'Guns N Roses - Sweet Child O Mine', src: 'https://example.com/music/sweet_child_o_mine.mp3', image: 'https://example.com/images/sweet_child_o_mine.jpg' },
+            // Add more audio file objects with URLs as needed
         ];
+        
         // Initialize variables
         let currentTrack = 0;
         let isPlaying = false;
 
-        // Function to update the track name
+        // Function to update the track name and image
         function updateTrackName() {
             trackNameElement.textContent = audioFiles[currentTrack].name;
             trackImageElement.src = audioFiles[currentTrack].image;
+            audioPlayer.src = audioFiles[currentTrack].src; // Update audio source
         }
 
         // Function to toggle play/pause
@@ -65,30 +65,31 @@
                 playPauseButton.textContent = '\u275A\u275A'; // Pause icon
             }
         }
+
         // Event listener for play/pause button
         playPauseButton.addEventListener('click', () => {
             togglePlayPause();
         });
+
         // Event listener for next button
         nextButton.addEventListener('click', () => {
             currentTrack = (currentTrack + 1) % audioFiles.length;
-            audioPlayer.src = audioFiles[currentTrack].src;
-            updateTrackName();
-            if (isPlaying) {
-                audioPlayer.play(); // If it was playing before, continue playing the new track.
-            }
-        });
-        // Event listener for previous button
-        prevButton.addEventListener('click', () => {
-            currentTrack = (currentTrack - 1 + audioFiles.length) % audioFiles.length;
-            audioPlayer.src = audioFiles[currentTrack].src;
             updateTrackName();
             if (isPlaying) {
                 audioPlayer.play(); // If it was playing before, continue playing the new track.
             }
         });
 
-        // Initial track name update
+        // Event listener for previous button
+        prevButton.addEventListener('click', () => {
+            currentTrack = (currentTrack - 1 + audioFiles.length) % audioFiles.length;
+            updateTrackName();
+            if (isPlaying) {
+                audioPlayer.play(); // If it was playing before, continue playing the new track.
+            }
+        });
+
+        // Initial track name and image update
         updateTrackName();
     </script>
 
