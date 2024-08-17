@@ -1,69 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Music Player</title>
-	<style>
-		.music-player {
-			width: 300px;
-			height: 150px;
-			border: 1px solid #ccc;
-			padding: 10px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: space-between;
-		}
-		.buttons {
-			display: flex;
-			justify-content: space-between;
-			width: 100%;
-		}
-		button {
-			width: 50px;
-			height: 30px;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="songs">
+    <meta property="og:description" content="Play the Music !">
+    <meta property="og:image" content="(link unavailable)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIC PLAYER </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 0;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: #FF0080;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .music-player-body {
+            overflow-y: auto;
+            height: 300px;
+            width: 90%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ecf0f1;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            color: #ecf0f1;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 600px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #B2FFFC;
+        }
+        .button {
+            display: block;
+            margin: 15px auto;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #FFA500;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #16a085;
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-	<div class="music-player">
-		<audio id="audioPlayer" controls>
-			<source src="your-audio-file.mp3" type="audio/mpeg">
-			Your browser does not support the audio element.
-		</audio>
-		<div class="buttons">
-			<button id="prevButton">&#9665;</button>
-			<button id="playPauseButton">&#9658;</button>
-			<button id="nextButton">&#9655;</button>
-			<button id="stopButton">&#9724;</button>
-		</div>
-	</div>
-	<script>
-		const audioPlayer = document.getElementById('audioPlayer');
-		const playPauseButton = document.getElementById('playPauseButton');
-		const nextButton = document.getElementById('nextButton');
-		const prevButton = document.getElementById('prevButton');
-		const stopButton = document.getElementById('stopButton');
-		
-		playPauseButton.addEventListener('click', () => {
-			if (audioPlayer.paused) {
-				audioPlayer.play();
-			} else {
-				audioPlayer.pause();
-			}
-		});
-		
-		nextButton.addEventListener('click', () => {
-			// Add functionality to play next track
-		});
-		
-		prevButton.addEventListener('click', () => {
-			// Add functionality to play previous track
-		});
-		
-		stopButton.addEventListener('click', () => {
-			audioPlayer.pause();
-			audioPlayer.currentTime = 0;
-		});
-	</script>
+    <div class="music-player-body">
+        <!-- music player HTML code -->
+        <h2> MUSIC PLAYER- </h2>
+        <img class="track-image" id="trackImage" src="#" alt="Track Image">
+        <h3 id="trackName"></h3>
+        <audio id="audioPlayer" controls>
+            <source src="#" type="audio/mpeg"> Your browser does not support the audio element.
+        </audio>
+        <div class="controls">
+            <button class="prev-button" id="prevButton">&#9665;</button>
+            <button class="play-pause-button" id="playPauseButton">&#9658;</button>
+            <button class="next-button" id="nextButton">&#9655;</button>
+        </div>
+    </div>
+    <div class="container">
+        <!-- SKS BOT HTML code -->
+        <h1>SKS BOT -ˢʸᵃᵐ</h1>
+        <a href="https://instagram.com/_sks_bot_" target="_blank" class="button">InstaGram</a>
+        <a href="(link unavailable)" target="_blank" class="button">BOT Number</a>
+        <a href="(link unavailable)" target="_blank" class="button">Whatsapp Bot Group</a>
+        <a href="(link unavailable)" target="_blank" class="button">Contact Owner</a>
+    </div>
+    <script>
+        // JavaScript code for music player and SKS BOT
+    </script>
 </body>
 </html>
