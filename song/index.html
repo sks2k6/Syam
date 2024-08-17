@@ -1,26 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta property="og:title" content="songs">
-    <meta property="og:description" content="Play the Music  !">
-    <meta property="og:image" content="https://graph.org/file/5cffbba2ae7d5fb29cbba.jpg">
+    <meta property="og:description" content="Play the Music !">
+    <meta property="og:image" content="(link unavailable)">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUSIC PLAYER </title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 0;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: #FF0080;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            color: #ecf0f1;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 600px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #B2FFFC;
+        }
+        .button {
+            display: block;
+            margin: 15px auto;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #FFA500;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #16a085;
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
-
-<body>
-    <body style="background-image: url(https://graph.org/file/84186c049e3cfdb50f4f0.png)">
+<body style="background-image: url((link unavailable))">
     <div class="music-player-body">
         <h2> MUSIC PLAYER- </h2>
         <img class="track-image" id="trackImage" src="#" alt="Track Image">
         <h3 id="trackName"></h3>
         <audio id="audioPlayer" controls>
-            <source src="#" type="audio/mpeg">
-            Your browser does not support the audio element.
+            <source src="#" type="audio/mpeg"> Your browser does not support the audio element.
         </audio>
         <div class="controls">
             <button class="prev-button" id="prevButton">&#9665;</button>
@@ -28,73 +77,24 @@
             <button class="next-button" id="nextButton">&#9655;</button>
         </div>
     </div>
+    <div class="container">
+        <h1>SKS BOT -ˢʸᵃᵐ</h1>
+        <a href="https://instagram.com/_sks_bot_" target="_blank" class="button">InstaGram</a>
+        <a href="(link unavailable)" target="_blank" class="button">BOT Number</a>
+        <a href="(link unavailable)" target="_blank" class="button">Whatsapp Bot Group</a>
+        <a href="(link unavailable)" target="_blank" class="button">Contact Owner</a>
+    </div>
     <script>
         // Get references to HTML elements
         const audioPlayer = document.getElementById('audioPlayer');
         const playPauseButton = document.getElementById('playPauseButton');
         const nextButton = document.getElementById('nextButton');
         const prevButton = document.getElementById('prevButton');
-        const trackNameElement = document.getElementById('trackName'); // Track name display
-        const trackImageElement = document.getElementById('trackImage'); // Track image
-        
+        const trackNameElement = document.getElementById('trackName');
+        // Track name display
+        const trackImageElement = document.getElementById('trackImage');
+        // Track image
         // Define the audio files with URLs and names
-        const audioFiles = [
-            { name: 'Mysterious Game-Lxngvx', src: 'https://graph.org/file/e43148a52d23c97dc427c.mp4', image: 'https://ik.imagekit.io/eypz/1723780773254_u4CuUBXi8.png' },
-            { name: 'Aadat Unplugged', src: 'https://s51.aconvert.com/convert/p3r68-cdx67/qkt2b-jzdj1.mp3', image: 'https://ik.imagekit.io/eypz/1723779869126_ajP7c9G85.png' },
-            // Add more audio file objects with URLs as needed
-        ];
-        
-        // Initialize variables
-        let currentTrack = 0;
-        let isPlaying = false;
-
-        // Function to update the track name and image
-        function updateTrackName() {
-            trackNameElement.textContent = audioFiles[currentTrack].name;
-            trackImageElement.src = audioFiles[currentTrack].image;
-            audioPlayer.src = audioFiles[currentTrack].src; // Update audio source
-        }
-
-        // Function to toggle play/pause
-        function togglePlayPause() {
-            if (isPlaying) {
-                audioPlayer.pause();
-                isPlaying = false;
-                playPauseButton.textContent = '\u25BA'; // Play icon
-            } else {
-                audioPlayer.play();
-                isPlaying = true;
-                playPauseButton.textContent = '\u275A\u275A'; // Pause icon
-            }
-        }
-
-        // Event listener for play/pause button
-        playPauseButton.addEventListener('click', () => {
-            togglePlayPause();
-        });
-
-        // Event listener for next button
-        nextButton.addEventListener('click', () => {
-            currentTrack = (currentTrack + 1) % audioFiles.length;
-            updateTrackName();
-            if (isPlaying) {
-                audioPlayer.play(); // If it was playing before, continue playing the new track.
-            }
-        });
-
-        // Event listener for previous button
-        prevButton.addEventListener('click', () => {
-            currentTrack = (currentTrack - 1 + audioFiles.length) % audioFiles.length;
-            updateTrackName();
-            if (isPlaying) {
-                audioPlayer.play(); // If it was playing before, continue playing the new track.
-            }
-        });
-
-        // Initial track name and image update
-        updateTrackName();
-    </script>
-
-</body>
-
-</html>
+        const audioFiles = [{
+            name: 'Mysterious Game-Lxngvx',
+            src
