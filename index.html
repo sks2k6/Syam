@@ -23,14 +23,34 @@
         }
 
         .container {
-            background: rgba(0, 0, 0, 0.85);
-            border-radius: 25px;
-            padding: 30px 40px 40px;
-            width: 90%;
-            max-width: 650px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-            animation: fadeIn 1.5s ease-in-out;
+    background: rgba(8, 29, 40, 0.85);
+    border-radius: 25px;
+    padding: 30px 40px 40px;
+    width: 90%;
+    max-width: 650px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out, neonShadow 4s linear infinite;
+}
+
+/* Single-color neon moving glow */
+@keyframes neonShadow {
+    10% {
+        box-shadow:
+            0 0 50px rgb(204, 255, 2),
+            0 0 30px rgb(255, 0, 0);
+    }
+    50% {
+        box-shadow:
+            0 0 25px rgba(0, 255, 26, 0.8),
+            0 0 50px rgb(255, 0, 0);
+    }
+    20% {
+        box-shadow:
+            0 0 15px rgb(98, 0, 255),
+            0 0 30px rgba(0, 255, 140, 0.6);
+    }
+}
+
         }
 
         /* ===== MENU ===== */
@@ -50,7 +70,7 @@
         }
 
         .menu a:hover {
-            color: #ffffff;
+            color: #ab7777;
         }
 
         /* ===== LOGO ===== */
@@ -189,8 +209,6 @@
         <a href="https://chat.whatsapp.com/IefWr15BRvE8UD7Pi1jGev" target="_blank" class="button">Bot Group 🇮🇳</a>
         <a href="https://chat.whatsapp.com/IMP7bxQEnGz9hhgcJYSe6i" target="_blank" class="button">Bot Group 🌍</a>
         <a href="/Games" class="button">Games 🎮</a>
-
     </div>
-
 </body>
 </html>
